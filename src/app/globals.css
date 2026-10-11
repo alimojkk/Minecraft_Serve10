@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* پایه‌های تم تیره مدرن با افکت شیشه‌ای */
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-night-950 text-slate-100 antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(96, 165, 250, 0.16), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 110%, rgba(167, 139, 250, 0.14), transparent);
+  background-attachment: fixed;
+}
+
+/* کارت‌های شیشه‌ای */
+.glass {
+  @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl;
+}
+
+.glass-strong {
+  @apply rounded-2xl border border-white/15 bg-night-900/70 backdrop-blur-2xl;
+}
+
+/* اسکرول‌بار ظریف */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* نشانگر چشمک‌زن تایپ‌رایتر */
+.typing-caret::after {
+  content: "▌";
+  @apply animate-blink-caret text-neon-cyan;
+  margin-right: 2px;
+}
+
+/* گوی صوتی */
+.voice-orb {
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.65), transparent 28%),
+    radial-gradient(circle at 70% 70%, rgba(167, 139, 250, 0.9), rgba(34, 211, 238, 0.85));
+  box-shadow:
+    0 0 60px rgba(34, 211, 238, 0.55),
+    0 0 120px rgba(167, 139, 250, 0.35),
+    inset 0 0 40px rgba(255, 255, 255, 0.18);
+}
+
+/* متن نئونی */
+.neon-text {
+  text-shadow: 0 0 18px rgba(34, 211, 238, 0.55);
+}
+
+/* حباب پیام‌ها */
+.bubble-user {
+  @apply rounded-2xl rounded-tr-md bg-gradient-to-bl from-blue-600/80 to-violet-600/70 text-white shadow-glow;
+}
+
+.bubble-assistant {
+  @apply rounded-2xl rounded-tl-md border border-white/10 bg-white/10 text-slate-100;
+}
+
+/* دکمهٔ قرمز توقف */
+.btn-emergency {
+  @apply rounded-xl bg-gradient-to-b from-red-500 to-red-700 px-5 py-3 font-bold text-white shadow-glow-red transition hover:brightness-110 active:scale-95;
+}
+
+/* ورودی‌ها */
+.field {
+  @apply w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-slate-100 outline-none transition placeholder:text-slate-400/60 focus:border-neon-cyan/60 focus:ring-2 focus:ring-neon-cyan/25;
+}
+
+/* لاگ کنسول ماینکرفت */
+.mc-log-info { @apply text-slate-300; }
+.mc-log-success { @apply text-neon-green; }
+.mc-log-warn { @apply text-neon-amber; }
+.mc-log-error { @apply text-neon-red; }
+.mc-log-event { @apply text-neon-violet; }
+.mc-log-chat { @apply text-neon-cyan; }
+.mc-log-system { @apply text-neon-blue; }
